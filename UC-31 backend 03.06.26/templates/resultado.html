@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Resultado</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+
+{% if sucesso %}
+
+    <h1>Cadastro realizado com sucesso!</h1>
+
+    <div class="dados">
+
+        <p><strong>Nome:</strong> {{ nome }}</p>
+
+        <p><strong>E-mail:</strong> {{ email }}</p>
+
+        <p><strong>Telefone:</strong> {{ telefone }}</p>
+
+        <p><strong>CPF:</strong> {{ cpf }}</p>
+
+        <p><strong>Cidade:</strong> {{ cidade }}</p>
+
+        <p><strong>Estado:</strong> {{ estado }}</p>
+
+        <p><strong>Curso:</strong> {{ curso }}</p>
+
+        <p><strong>Idade:</strong> {{ idade }}</p>
+
+    </div>
+
+{% else %}
+
+    <h1>Erros encontrados</h1>
+
+    <ul>
+
+        {% for erro in erros %}
+            <li>{{ erro }}</li>
+        {% endfor %}
+
+    </ul>
+
+{% endif %}
+
+<br>
+
+<a href="/">Voltar</a>
+
+</div>
+
+</body>
+</html>
