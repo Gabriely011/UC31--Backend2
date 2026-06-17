@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contador de Acessos</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .card {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 2px 10px rgba(0,0,0,.1);
+            text-align: center;
+            width: 320px;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        .contador {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #2563eb;
+            margin: 15px 0;
+        }
+
+        button {
+            background: #dc2626;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #b91c1c;
+        }
+
+        .ia {
+            margin-top: 20px;
+            font-size: 0.7rem;
+            color: #999;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <h1>Contador</h1>
+
+        <p>Quantidade de acessos nesta sessão:</p>
+
+        <div class="contador">
+            {{ contador }}
+        </div>
+
+        <form action="{{ url_for('zerar') }}" method="post">
+            <button type="submit">Zerar</button>
+        </form>
+
+    </div>
+
+</body>
+</html>
